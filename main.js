@@ -9,10 +9,12 @@ let searchArtists = document.getElementById('searchArtistsInput')
 let searchMovies = document.getElementById('searchMoviesInput')
 let errormessage;
 
+//erasing previous result and presenting a new one
 function clearRightContent() {
   document.getElementById('rightContent').innerHTML = " "
 }
 
+//Fetching the API datas for Top Rated Movies
 const optionsForTopRated = {
   method: 'GET',
   headers: {
@@ -32,6 +34,8 @@ topRatedButton.addEventListener('click', async () => {
       resultTitle.innerText = "Top Rated"
       resultTitle.classList.add('boldIt')
       document.getElementById('rightContent').appendChild(resultTitle)
+
+      // getting the picture posters from the API results using the loops
       for (const movie of movies.results.slice(0, 10)) {
         const contentDiv = document.createElement('div')
         contentDiv.classList.add('listIt')
@@ -48,7 +52,8 @@ topRatedButton.addEventListener('click', async () => {
           imgEl.title = movie.title + ". Release date: " + movie.release_date
         }
         contentDiv.appendChild(aImg);
-        // this is for the paragraphs
+
+        // this is for the paragraphs that appear on the side of the movie poster
         const sidingDiv = document.createElement('div');
         sidingDiv.classList.add('onTheSides')
         const titleP = document.createElement('p')
@@ -61,10 +66,14 @@ topRatedButton.addEventListener('click', async () => {
         releaseDateP.classList.add('italicIt')
         contentDiv.appendChild(sidingDiv)
         // until here
+
         document.getElementById('rightContent').appendChild(contentDiv)
       }
+      //confirming the lightbox library for pop up pictures
       let lightbox = new SimpleLightbox('.listIt a', { /* options */ });
     })
+    
+    //catching the errors that are network related
     .catch(err => {
       const resultTitle = document.createElement('h')
       resultTitle.innerText = "NetworkError when attempting to fetch resource\nPage tips: check your connection,\nmake sure the moviedatabase website is up and running"
@@ -146,6 +155,7 @@ document.getElementById('searchArtistsForm').addEventListener('submit', async (e
   clearRightContent();
   fetch(`https://api.themoviedb.org/3/search/person?query=${searchArtists.value}&include_adult=false&language=en-US&page=1`, optionsForArtists)
     .then(response => {
+      //initiating first if statements to be able show the error message if the networks work but the data is non-existent
       if (!response.ok) { throw new Error(errormessage = 'Server returned ' + response.status + '.'); }
       return response.json();
     })
