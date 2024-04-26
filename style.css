@@ -1,0 +1,182 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-width: 1200px; 
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url('background.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    
+}
+
+iframe{
+    position: fixed;
+    width: 100%;
+    height: 100%; 
+    z-index: -1;
+    opacity: 0.6;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+
+}
+#header {
+    background-color: #337abd;
+    position: fixed;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -2;
+    max-width: auto; 
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 60px;
+    margin-top: 50px;
+    max-width: 800px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: flex-start;
+}
+
+#leftContent {
+    justify-content: center;
+    align-items: center;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-right: 50px;
+    background-color: rgb(22, 25, 32);
+    padding: 7px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgb(139, 133, 133);
+    opacity: 0.9;
+    
+}
+
+#whiteP{
+    color: white;
+}
+
+#rightContent {
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.listIt img :hover{
+    transform: scale(1.05)
+}
+
+.listIt {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: solid 1px black;
+    border-top: solid 1px black;
+
+}
+
+.listIt img {
+    max-width: 150px; 
+    height: auto;
+    border-radius: 40px;
+    margin-right: 20px;
+    padding: 3px;
+    
+}
+
+
+.listIt .onTheSides{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    
+}
+.listIt p {
+    margin: 2px;
+    font-size: large;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.listIt p.boldIt{
+    font-weight: bold;
+}
+
+.boldIt{
+    font-weight: bold;
+    text-align: center;
+}
+
+.listIt p.italicIt{
+    font-style: italic;
+}
+
+.onTheSides{
+    background: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(224, 220, 220);
+
+}
+
+button {
+    background-color: #337abd;
+    opacity: 1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(139, 133, 133);
+}
+
+button:hover {
+    background-color: #337abd;
+    opacity: 0.7;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#footer {
+    background-color: #337abd;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 60px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
